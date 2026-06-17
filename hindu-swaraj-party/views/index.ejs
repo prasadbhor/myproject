@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hindu Swaraj Party | हिंदू स्वराज पार्टी</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+
+<!-- ========== HEADER / NAVBAR ========== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="om-symbol">🕉</div>
+      <div class="logo-text">
+        <span class="logo-hi">हिंदू स्वराज पार्टी</span>
+        <span class="logo-en">HINDU SWARAJ PARTY</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#ideology">Ideology</a>
+      <a href="#president">President</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#join">Join Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-join-btn" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
+      🙏 Join Party
+    </button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#ideology" onclick="toggleMenu()">Ideology</a>
+    <a href="#president" onclick="toggleMenu()">President</a>
+    <a href="#agenda" onclick="toggleMenu()">Agenda</a>
+    <a href="#join" onclick="toggleMenu()">Join Us</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-lotus-left">🪷</div>
+  <div class="hero-lotus-right">🪷</div>
+  <div class="hero-content">
+    <div class="hero-badge">॥ सत्यमेव जयते ॥</div>
+    <h1 class="hero-title">
+      <span class="hero-hi">हिंदू स्वराज पार्टी</span>
+      <span class="hero-en">HINDU SWARAJ PARTY</span>
+    </h1>
+    <p class="hero-tagline">धर्म रक्षति रक्षितः — <em>He who protects Dharma is protected by Dharma</em></p>
+    <p class="hero-sub">A political movement rooted in the timeless values of Sanatan Dharma, dedicated to the prosperity, pride, and protection of every Hindu and every Indian.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">🙏 Join the Movement</button>
+      <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Learn More ↓</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" id="memberCountHero"><%= memberCount %>+</span>
+        <span class="stat-label">Members</span>
+      </div>
+      <div class="stat-divider">|</div>
+      <div class="stat">
+        <span class="stat-num">2024</span>
+        <span class="stat-label">Founded</span>
+      </div>
+      <div class="stat-divider">|</div>
+      <div class="stat">
+        <span class="stat-num">28</span>
+        <span class="stat-label">States Active</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">↓ Scroll to explore</div>
+</section>
+
+<!-- ========== SAFFRON STRIP ========== -->
+<div class="tricolor-strip">
+  <div class="strip-saffron"></div>
+  <div class="strip-white"><span>🕉️ हर हर महादेव 🕉️ &nbsp;&nbsp;&nbsp; जय माँ भारती &nbsp;&nbsp;&nbsp; वन्दे मातरम्</span></div>
+  <div class="strip-green"></div>
+</div>
+
+<!-- ========== ABOUT ========== -->
+<section class="section about-section" id="about">
+  <div class="container">
+    <div class="section-eyebrow">॥ परिचय ॥</div>
+    <h2 class="section-title">About Hindu Swaraj Party</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Hindu Swaraj Party is a democratic political organization born from the sacred duty to uphold <strong>Sanatan Dharma</strong>, protect the cultural heritage of Bharat, and ensure the dignity and rights of every Hindu citizen across the nation.</p>
+        <p>We believe in a <strong>self-reliant, spiritually rooted, and economically strong Bharat</strong> — one that walks the ancient path of Dharma while embracing the modern world with confidence and pride.</p>
+        <p>Our party is committed to <strong>inclusive governance</strong>, respect for all traditions, protection of temples and sacred places, promotion of Sanskrit and Vedic education, and the economic empowerment of every citizen.</p>
+        <div class="about-values">
+          <div class="value-card"><div class="value-icon">🪷</div><h4>Dharma</h4><p>Righteousness in every action</p></div>
+          <div class="value-card"><div class="value-icon">🔱</div><h4>Shakti</h4><p>Strength of nation & people</p></div>
+          <div class="value-card"><div class="value-icon">🕉</div><h4>Satya</h4><p>Truth as the ultimate guide</p></div>
+          <div class="value-card"><div class="value-icon">🌸</div><h4>Seva</h4><p>Service above all else</p></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-emblem">
+          <div class="emblem-ring">
+            <div class="emblem-center">
+              <div class="emblem-om">🕉</div>
+              <div class="emblem-text">हिंदू स्वराज</div>
+            </div>
+          </div>
+          <div class="emblem-caption">Party Emblem</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== IDEOLOGY ========== -->
+<section class="section ideology-section" id="ideology">
+  <div class="container">
+    <div class="section-eyebrow">॥ विचारधारा ॥</div>
+    <h2 class="section-title">Our Ideology</h2>
+    <p class="section-subtitle">Rooted in the eternal wisdom of Sanatan Dharma, guided by the vision of a great Bharat</p>
+    <div class="ideology-grid">
+      <div class="ideology-card">
+        <div class="ideo-icon">🛕</div>
+        <h3>Temple & Heritage Protection</h3>
+        <p>Reclaim, restore, and protect ancient Hindu temples and sacred sites across Bharat from any form of encroachment or desecration.</p>
+      </div>
+      <div class="ideology-card">
+        <div class="ideo-icon">📖</div>
+        <h3>Vedic Education</h3>
+        <p>Integrate Vedic wisdom, Sanskrit language, and yogic sciences into the modern education system to build character along with knowledge.</p>
+      </div>
+      <div class="ideology-card">
+        <div class="ideo-icon">🌾</div>
+        <h3>Farmers & Rural Empowerment</h3>
+        <p>Strengthen the backbone of Bharat — our Annadatas — through fair prices, debt relief, and modern agricultural support.</p>
+      </div>
+      <div class="ideology-card">
+        <div class="ideo-icon">⚖️</div>
+        <h3>Uniform Civil Code</h3>
+        <p>One nation, one law. Advocate for equal rights for every citizen, ending discrimination based on personal law differences.</p>
+      </div>
+      <div class="ideology-card">
+        <div class="ideo-icon">🇮🇳</div>
+        <h3>Cultural Nationalism</h3>
+        <p>Celebrate the glorious culture of Bharat, promote Hindi and regional languages, and strengthen our civilizational identity.</p>
+      </div>
+      <div class="ideology-card">
+        <div class="ideo-icon">💪</div>
+        <h3>Economic Sovereignty</h3>
+        <p>Swadeshi first — support Indian businesses, MSMEs, and entrepreneurs while building a self-reliant economic superpower.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRESIDENT ========== -->
+<section class="section president-section" id="president">
+  <div class="president-bg"></div>
+  <div class="container">
+    <div class="section-eyebrow" style="color:#FFD700">॥ राष्ट्रीय अध्यक्ष ॥</div>
+    <h2 class="section-title" style="color:#fff">Party President</h2>
+    <div class="president-card">
+      <div class="president-photo-wrap">
+        <div class="president-photo-ring">
+          <img src="/images/president.jpg" alt="Prasad Harishchandra Bhor" class="president-photo"/>
+        </div>
+        <div class="president-badge-below">राष्ट्रीय अध्यक्ष</div>
+      </div>
+      <div class="president-info">
+        <div class="president-greeting">🙏 Jay Shri Ram</div>
+        <h3 class="president-name">Prasad Harishchandra Bhor</h3>
+        <div class="president-title-tag">National President — Hindu Swaraj Party</div>
+        <blockquote class="president-quote">
+          "Our nation was built on the foundation of Dharma. It is our sacred duty to preserve this heritage for future generations, to stand firm in truth, and to build a Bharat that every Hindu can be proud of."
+        </blockquote>
+        <p class="president-bio">Shri Prasad Harishchandra Bhor is the founding president and guiding force behind Hindu Swaraj Party. With deep roots in Maharashtrian culture and an unwavering commitment to Sanatan Dharma, he leads the party with the vision of a spiritually strong, economically prosperous, and culturally proud Bharat.</p>
+        <div class="president-pillars">
+          <span>🔱 Dharma Raksha</span>
+          <span>🌸 Jan Seva</span>
+          <span>🇮🇳 Rashtra Pratham</span>
+          <span>🕉 Sanatan Values</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AGENDA / MANIFESTO ========== -->
+<section class="section agenda-section" id="agenda">
+  <div class="container">
+    <div class="section-eyebrow">॥ हमारा संकल्प ॥</div>
+    <h2 class="section-title">Our Agenda & Manifesto</h2>
+    <p class="section-subtitle">Five pillars of our commitment to the people of Bharat</p>
+    <div class="agenda-list">
+      <div class="agenda-item">
+        <div class="agenda-num">०१</div>
+        <div class="agenda-content">
+          <h3>Protect Sanatan Dharma</h3>
+          <p>Enact strong legal protections for Hindu temples, pilgrimage sites, and religious practices. End discrimination against Hindu festivals and traditions.</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">०२</div>
+        <div class="agenda-content">
+          <h3>Ram Rajya Governance</h3>
+          <p>Transparent, corruption-free governance inspired by the ideals of Ram Rajya — where every citizen is heard, protected, and empowered.</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">०३</div>
+        <div class="agenda-content">
+          <h3>Youth & Education Reform</h3>
+          <p>Revamp education to include Vedic sciences, yoga, martial arts, and Indian history — building confident, rooted, and skilled citizens.</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">०४</div>
+        <div class="agenda-content">
+          <h3>Women Safety & Dignity</h3>
+          <p>Zero tolerance for crimes against women. Fast-track courts, stronger laws, and community programs ensuring safety for every daughter of Bharat.</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">०५</div>
+        <div class="agenda-content">
+          <h3>Viksit Bharat 2047</h3>
+          <p>Work toward a fully developed India by 2047 — with world-class infrastructure, healthcare, space capabilities, and global cultural leadership.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== JOIN US ========== -->
+<section class="section join-section" id="join">
+  <div class="join-bg-pattern"></div>
+  <div class="container">
+    <div class="section-eyebrow">॥ हमसे जुड़ें ॥</div>
+    <h2 class="section-title">Join Hindu Swaraj Party</h2>
+    <p class="section-subtitle">Be part of the movement. Fill in your details below and become a proud member of Hindu Swaraj Party.</p>
+
+    <% if (success) { %>
+    <div class="alert alert-success">
+      <span class="alert-icon">✅</span>
+      <%= success %>
+    </div>
+    <% } %>
+
+    <% if (error) { %>
+    <div class="alert alert-error">
+      <span class="alert-icon">⚠️</span>
+      <%= error %>
+    </div>
+    <% } %>
+
+    <div class="join-wrapper">
+      <div class="join-info">
+        <div class="join-info-icon">🕉</div>
+        <h3>Why Join Us?</h3>
+        <ul class="join-benefits">
+          <li>✅ Be part of a growing national movement</li>
+          <li>✅ Participate in events, rallies & campaigns</li>
+          <li>✅ Help shape the future of Bharat</li>
+          <li>✅ Connect with like-minded patriots</li>
+          <li>✅ Receive official party membership card</li>
+          <li>✅ Get updates directly from party leadership</li>
+        </ul>
+        <div class="join-member-count">
+          <span class="jmc-num"><%= memberCount %>+</span>
+          <span class="jmc-label">Members have already joined</span>
+        </div>
+      </div>
+      <form class="join-form" action="/join" method="POST" id="joinForm">
+        <div class="form-header">
+          <h3>Membership Registration</h3>
+          <p>सदस्यता पंजीकरण</p>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" name="full_name" placeholder="Enter your full name" required/>
+          </div>
+          <div class="form-group">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" name="email" placeholder="your@email.com" required/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Mobile Number <span class="req">*</span></label>
+            <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required/>
+          </div>
+          <div class="form-group">
+            <label>Occupation</label>
+            <select name="occupation">
+              <option value="">Select Occupation</option>
+              <option>Student</option>
+              <option>Farmer</option>
+              <option>Business / Vyapar</option>
+              <option>Government Service</option>
+              <option>Private Service</option>
+              <option>Social Worker</option>
+              <option>Religious Leader</option>
+              <option>Retired</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>City / Village <span class="req">*</span></label>
+            <input type="text" name="city" placeholder="Your city or village" required/>
+          </div>
+          <div class="form-group">
+            <label>State <span class="req">*</span></label>
+            <select name="state" required>
+              <option value="">Select State</option>
+              <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
+              <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
+              <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+              <option>Himachal Pradesh</option><option>Jharkhand</option>
+              <option>Karnataka</option><option>Kerala</option>
+              <option>Madhya Pradesh</option><option selected>Maharashtra</option>
+              <option>Manipur</option><option>Meghalaya</option>
+              <option>Mizoram</option><option>Nagaland</option>
+              <option>Odisha</option><option>Punjab</option>
+              <option>Rajasthan</option><option>Sikkim</option>
+              <option>Tamil Nadu</option><option>Telangana</option>
+              <option>Tripura</option><option>Uttar Pradesh</option>
+              <option>Uttarakhand</option><option>West Bengal</option>
+              <option>Delhi</option><option>Jammu & Kashmir</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label>Your Message / Why you want to join</label>
+          <textarea name="message" rows="3" placeholder="Share why you wish to join Hindu Swaraj Party..."></textarea>
+        </div>
+        <div class="form-declaration">
+          <input type="checkbox" id="declaration" required/>
+          <label for="declaration">I declare that I believe in the Constitution of India, and I wish to join Hindu Swaraj Party voluntarily to serve Dharma and the nation.</label>
+        </div>
+        <button type="submit" class="form-submit-btn">
+          🙏 Submit Membership &nbsp; | &nbsp; सदस्य बनें
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="section-eyebrow">॥ संपर्क करें ॥</div>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <h4>Headquarters</h4>
+        <p>Hindu Swaraj Party<br/>Pune, Maharashtra, India</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <h4>Email</h4>
+        <p>contact@hinduswarajparty.org<br/>president@hinduswarajparty.org</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <h4>Phone</h4>
+        <p>Party Helpline<br/>1800-HSP-BHARAT</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🌐</div>
+        <h4>Social Media</h4>
+        <p>@HinduSwarajParty<br/>Follow us on all platforms</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <div class="footer-om">🕉</div>
+      <div>
+        <div class="footer-name-hi">हिंदू स्वराज पार्टी</div>
+        <div class="footer-name-en">HINDU SWARAJ PARTY</div>
+      </div>
+    </div>
+    <div class="footer-motto">
+      <p>॥ धर्मो रक्षति रक्षितः ॥</p>
+      <p class="footer-motto-en">Dharma protects those who protect it</p>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <p>© 2024 Hindu Swaraj Party. All Rights Reserved.</p>
+    <p>Registered under Election Commission of India &nbsp;|&nbsp; President: Prasad Harishchandra Bhor</p>
+    <p class="footer-jai">🇮🇳 जय हिंद &nbsp;|&nbsp; जय भारत &nbsp;|&nbsp; वन्दे मातरम् &nbsp;|&nbsp; हर हर महादेव 🕉</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

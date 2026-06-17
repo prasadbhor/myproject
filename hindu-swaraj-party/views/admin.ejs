@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Admin — Members | Hindu Swaraj Party</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; background:#0a0a0a; color:#eee; padding:2rem; }
+    h1 { color:#FF9933; margin-bottom:1.5rem; font-size:1.6rem; }
+    table { width:100%; border-collapse:collapse; background:#111; border-radius:8px; overflow:hidden; }
+    th { background:#FF9933; color:#000; padding:12px; text-align:left; font-size:0.85rem; }
+    td { padding:10px 12px; border-bottom:1px solid #222; font-size:0.85rem; }
+    tr:hover td { background:#1a1a1a; }
+    .count { color:#FFD700; font-size:1.2rem; margin-bottom:1rem; }
+    .badge { display:inline-block; background:#800000; color:#FFD700; border-radius:4px; padding:2px 8px; font-size:0.75rem; }
+  </style>
+</head>
+<body>
+  <h1>🕉 Hindu Swaraj Party — Member Registry</h1>
+  <div class="count">Total Members: <strong><%= members.length %></strong></div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Name</th><th>Email</th><th>Phone</th>
+        <th>City</th><th>State</th><th>Occupation</th><th>Registered</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% members.forEach((m, i) => { %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><strong><%= m.full_name %></strong></td>
+        <td><%= m.email %></td>
+        <td><%= m.phone %></td>
+        <td><%= m.city %></td>
+        <td><span class="badge"><%= m.state %></span></td>
+        <td><%= m.occupation || '—' %></td>
+        <td><%= new Date(m.created_at).toLocaleDateString('en-IN') %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
