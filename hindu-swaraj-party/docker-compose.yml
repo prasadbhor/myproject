@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  hindu-swaraj-party:
+    build: .
+    container_name: hindu-swaraj-party
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - ADMIN_TOKEN=hsp-admin-2024
+    restart: unless-stopped
