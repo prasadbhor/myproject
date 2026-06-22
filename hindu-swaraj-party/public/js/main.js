@@ -96,3 +96,102 @@ if (heroCount) {
   });
   heroObserver.observe(heroCount);
 }
+
+/* ================================================================
+   FEATURE/UI-UPGRADE — Community APIs & Admin Status Pings
+   ================================================================ */
+
+// Fetch community stats from APIs and update UI
+async function loadCommunityStats() {
+  try {
+    const res  = await fetch('/api/community/all');
+    const data = await res.json();
+
+    const waEl = document.getElementById('wa-members');
+    const tgEl = document.getElementById('tg-members');
+    const ytEl = document.getElementById('yt-members');
+
+    if (waEl) waEl.textContent = '👥 ' + (data.whatsapp?.members || '2,400+') + ' Members';
+    if (tgEl) tgEl.textContent = '👥 ' + (data.telegram?.members || '5,100+') + ' Subscribers';
+    if (ytEl) ytEl.textContent = '👥 ' + (data.youtube?.members  || '1,800+') + ' Subscribers';
+  } catch (e) {
+    console.warn('Community stats API error:', e);
+  }
+}
+
+// Join community handler — hits API then redirects
+async function joinCommunity(platform) {
+  const btnId  = platform === 'whatsapp' ? 'waJoinBtn'  : platform === 'telegram' ? 'tgJoinBtn'  : 'ytJoinBtn';
+  const spinId = platform === 'whatsapp' ? 'wa-spinner' : platform === 'telegram' ? 'tg-spinner' : 'yt-spinner';
+  const statId = platform === 'whatsapp' ? 'wa-status'  : platform === 'telegram' ? 'tg-status'  : 'yt-status';
+
+  const btn  = document.getElementById(btnId);
+  const spin = document.getElementById(spinId);
+  const stat = document.getElementById(statId);
+
+  if (btn)  btn.disabled = true;
+  if (spin) spin.style.display = 'inline-block';
+
+  try {
+    let apiUrl, redirectUrl;
+    if (platform === 'whatsapp') {
+      const r = await fetch('/api/community/whatsapp/join');
+      const d = await r.json();
+      redirectUrl = d.redirectUrl;
+    } else if (platform === 'telegram') {
+      const r = await fetch('/api/community/telegram/join');
+      const d = await r.json();
+      redirectUrl = d.redirectUrl;
+    } else {
+      const r = await fetch('/api/community/youtube');
+      const d = await r.json();
+      redirectUrl = d.channelUrl;
+    }
+
+    if (stat) { stat.textContent = '✅ Redirecting…'; stat.style.color = '#22c55e'; }
+    setTimeout(() => {
+      if (redirectUrl) window.open(redirectUrl, '_blank');
+      if (btn)  btn.disabled  = false;
+      if (spin) spin.style.display = 'none';
+      if (stat) { stat.textContent = '✅ Link opened in new tab!'; }
+    }, 800);
+
+  } catch (e) {
+    if (stat) { stat.textContent = '⚠️ Error. Try again.'; stat.style.color = '#ef4444'; }
+    if (btn)  btn.disabled  = false;
+    if (spin) spin.style.display = 'none';
+    console.warn('Community join error:', e);
+  }
+}
+
+// API status dashboard on homepage
+async function pingApiStatus() {
+  const apis = [
+    { id: 'api-health',   url: '/health',                    label: 'Health Check' },
+    { id: 'api-members',  url: '/api/members/count',         label: 'Members API'  },
+    { id: 'api-wa',       url: '/api/community/whatsapp',    label: 'WhatsApp API' },
+    { id: 'api-tg',       url: '/api/community/telegram',    label: 'Telegram API' },
+  ];
+  for (const api of apis) {
+    const el = document.getElementById(api.id);
+    if (!el) continue;
+    try {
+      const r  = await fetch(api.url);
+      const ok = r.ok;
+      const dot = el.querySelector('.api-dot');
+      if (dot) dot.className = 'api-dot ' + (ok ? 'green' : 'red');
+      el.childNodes[1].textContent = ' ' + api.label + (ok ? ' ✓' : ' ✗');
+    } catch {
+      const dot = el.querySelector('.api-dot');
+      if (dot) dot.className = 'api-dot red';
+      if (el.childNodes[1]) el.childNodes[1].textContent = ' ' + api.label + ' ✗';
+    }
+  }
+}
+
+// Init on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  loadCommunityStats();
+  pingApiStatus();
+  setInterval(pingApiStatus, 30000);
+});

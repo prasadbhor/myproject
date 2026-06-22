@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login — Hindu Swaraj Party</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0d0d0d;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bg-pattern {
+      position: fixed; inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(128,0,0,0.3) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,153,51,0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .login-wrap {
+      width: 100%;
+      max-width: 420px;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .login-card {
+      background: #161616;
+      border: 1px solid #2a2a2a;
+      border-top: 3px solid #FF9933;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 0 40px rgba(255,153,51,0.08);
+    }
+    .login-header { text-align: center; margin-bottom: 2rem; }
+    .login-om { font-size: 2.8rem; filter: drop-shadow(0 0 14px #FFD700); margin-bottom: 0.6rem; display: block; }
+    .login-title {
+      font-family: 'Cinzel', serif;
+      color: #FF9933;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+    .login-sub { color: #666; font-size: 0.82rem; margin-top: 0.3rem; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, #333, transparent); margin: 1.5rem 0; }
+    .form-group { margin-bottom: 1.2rem; }
+    label { display: block; color: #aaa; font-size: 0.82rem; margin-bottom: 0.4rem; font-weight: 500; letter-spacing: .02em; }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      background: #0d0d0d;
+      border: 1px solid #2c2c2c;
+      color: #f0f0f0;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      font-family: 'Inter', sans-serif;
+    }
+    input[type="text"]:focus, input[type="password"]:focus {
+      border-color: #FF9933;
+      box-shadow: 0 0 0 3px rgba(255,153,51,0.12);
+    }
+    .show-pw-wrap { position: relative; }
+    .show-pw-btn {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: #666; cursor: pointer; font-size: 1rem; padding: 0;
+    }
+    .show-pw-btn:hover { color: #FF9933; }
+    .error-msg {
+      background: rgba(180,0,0,0.15);
+      border: 1px solid #800000;
+      color: #ff6b6b;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #FF9933, #E07800);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity .2s, transform .1s;
+      font-family: 'Cinzel', serif;
+      letter-spacing: .05em;
+    }
+    .login-btn:hover { opacity: .9; transform: translateY(-1px); }
+    .login-btn:active { transform: translateY(0); }
+    .back-link { text-align: center; margin-top: 1.5rem; }
+    .back-link a { color: #555; font-size: 0.82rem; text-decoration: none; transition: color .2s; }
+    .back-link a:hover { color: #FF9933; }
+    .badge { display: inline-block; background: #1a1a1a; border: 1px solid #333; border-radius: 20px; padding: 4px 12px; color: #666; font-size: 0.75rem; margin-top: 1.5rem; }
+    @media(max-width:480px) { .login-card { padding: 2rem 1.25rem; } }
+  </style>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-header">
+        <span class="login-om">🕉</span>
+        <div class="login-title">ADMIN LOGIN</div>
+        <div class="login-sub">Hindu Swaraj Party — Secure Admin Panel</div>
+      </div>
+
+      <% if (error) { %>
+      <div class="error-msg">⚠️ <%= error %></div>
+      <% } %>
+
+      <div class="divider"></div>
+
+      <form method="POST" action="/admin/login">
+        <div class="form-group">
+          <label>USERNAME</label>
+          <input type="text" name="username" placeholder="Enter admin username" required autocomplete="username"/>
+        </div>
+        <div class="form-group">
+          <label>PASSWORD</label>
+          <div class="show-pw-wrap">
+            <input type="password" name="password" id="pwField" placeholder="Enter password" required autocomplete="current-password"/>
+            <button type="button" class="show-pw-btn" onclick="togglePw()" title="Show/hide password">👁</button>
+          </div>
+        </div>
+        <button type="submit" class="login-btn">🔐 &nbsp; LOGIN TO ADMIN PANEL</button>
+      </form>
+
+      <div class="back-link">
+        <a href="/">← Back to Website</a>
+        <br/><span class="badge">🔒 Secure Admin Access</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    function togglePw() {
+      const f = document.getElementById('pwField');
+      f.type = f.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+</body>
+</html>
