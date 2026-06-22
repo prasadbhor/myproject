@@ -24,8 +24,9 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#ideology">Ideology</a>
-      <a href="#president">President</a>
+      <a href="#savarkar">Veer Savarkar</a>
       <a href="#agenda">Agenda</a>
+      <a href="#community">Community</a>
       <a href="#join">Join Us</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -38,8 +39,9 @@
     <a href="#home" onclick="toggleMenu()">Home</a>
     <a href="#about" onclick="toggleMenu()">About</a>
     <a href="#ideology" onclick="toggleMenu()">Ideology</a>
-    <a href="#president" onclick="toggleMenu()">President</a>
+    <a href="#savarkar" onclick="toggleMenu()">Veer Savarkar</a>
     <a href="#agenda" onclick="toggleMenu()">Agenda</a>
+    <a href="#community" onclick="toggleMenu()">Community</a>
     <a href="#join" onclick="toggleMenu()">Join Us</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
   </div>
@@ -162,34 +164,123 @@
   </div>
 </section>
 
-<!-- ========== PRESIDENT ========== -->
-<section class="section president-section" id="president">
-  <div class="president-bg"></div>
+<!-- ========== VEER SAVARKAR SECTION (replaces president) ========== -->
+<section class="section savarkar-section" id="savarkar">
+  <div class="savarkar-bg-overlay"></div>
   <div class="container">
-    <div class="section-eyebrow" style="color:#FFD700">॥ राष्ट्रीय अध्यक्ष ॥</div>
-    <h2 class="section-title" style="color:#fff">Party President</h2>
-    <div class="president-card">
-      <div class="president-photo-wrap">
-        <div class="president-photo-ring">
-          <img src="/images/president.jpg" alt="Prasad Harishchandra Bhor" class="president-photo"/>
+    <div class="section-eyebrow savarkar-eyebrow">॥ स्वातंत्र्यवीर ॥</div>
+    <h2 class="section-title savarkar-title">Veer Savarkar — Our Ideological Inspiration</h2>
+    <p class="section-subtitle savarkar-sub">The fearless champion of Hindu Rashtra, revolutionary freedom fighter, and philosopher of Hindutva</p>
+
+    <div class="savarkar-main-card">
+      <!-- LEFT: Photo -->
+      <div class="savarkar-photo-col">
+        <div class="savarkar-photo-frame">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Veer_Savarkar.jpg/400px-Veer_Savarkar.jpg"
+            alt="Veer Savarkar — Swatantryaveer Vinayak Damodar Savarkar"
+            class="savarkar-photo"
+            onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/200px-No_image_available.svg.png'"
+          />
+          <div class="savarkar-photo-badge">स्वातंत्र्यवीर</div>
         </div>
-        <div class="president-badge-below">राष्ट्रीय अध्यक्ष</div>
+        <div class="savarkar-name-block">
+          <h3 class="savarkar-name">Vinayak Damodar Savarkar</h3>
+          <p class="savarkar-dates">28 May 1883 – 26 February 1966</p>
+          <div class="savarkar-tags">
+            <span>🔱 Hindutva Philosopher</span>
+            <span>✊ Freedom Fighter</span>
+            <span>📜 Author & Poet</span>
+          </div>
+        </div>
       </div>
-      <div class="president-info">
-        <div class="president-greeting">🙏 Jay Shri Ram</div>
-        <h3 class="president-name">Prasad Harishchandra Bhor</h3>
-        <div class="president-title-tag">National President — Hindu Swaraj Party</div>
-        <blockquote class="president-quote">
-          "Our nation was built on the foundation of Dharma. It is our sacred duty to preserve this heritage for future generations, to stand firm in truth, and to build a Bharat that every Hindu can be proud of."
+
+      <!-- RIGHT: Details -->
+      <div class="savarkar-info-col">
+        <blockquote class="savarkar-quote">
+          <span class="quote-mark">"</span>
+          If you cut my body into pieces, every piece would cry — <em>Jai Hind! Jai Bharat!</em>
+          <span class="quote-mark">"</span>
         </blockquote>
-        <p class="president-bio">Shri Prasad Harishchandra Bhor is the founding president and guiding force behind Hindu Swaraj Party. With deep roots in Maharashtrian culture and an unwavering commitment to Sanatan Dharma, he leads the party with the vision of a spiritually strong, economically prosperous, and culturally proud Bharat.</p>
-        <div class="president-pillars">
-          <span>🔱 Dharma Raksha</span>
-          <span>🌸 Jan Seva</span>
-          <span>🇮🇳 Rashtra Pratham</span>
-          <span>🕉 Sanatan Values</span>
+
+        <div class="savarkar-bio">
+          <p>
+            <strong>Vinayak Damodar Savarkar</strong>, known as <strong>Veer Savarkar</strong> (Brave Savarkar), was one of India's most fearless revolutionary freedom fighters, a brilliant orator, poet, and the father of the Hindutva ideology. He was the first political prisoner to be held in the infamous Cellular Jail (Kala Pani) in the Andaman Islands, where he endured extreme torture yet never broke his spirit.
+          </p>
+          <p>
+            His seminal work <em>"Hindutva: Who is a Hindu?"</em> (1923) defined the concept of Hindu nationalism and laid the philosophical foundation that inspires our party's vision of a culturally proud, spiritually rooted Bharat.
+          </p>
+        </div>
+
+        <!-- Ideology Pillars -->
+        <div class="savarkar-pillars">
+          <h4 class="pillars-heading">🔱 Core Philosophical Pillars</h4>
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <div class="pillar-icon">📜</div>
+              <h5>Hindutva</h5>
+              <p>Defined Hinduness as a civilizational identity — not just a religion, but a way of life for all born of Bharatmata.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">⚔️</div>
+              <h5>Armed Resistance</h5>
+              <p>Championed the right of Hindus to bear arms and defend themselves, advocating militarization of the Hindu community.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🔬</div>
+              <h5>Scientific Temper</h5>
+              <p>Advocated blending Hindu tradition with modern science, rejecting superstition while honoring cultural heritage.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🤝</div>
+              <h5>Social Reform</h5>
+              <p>Strongly opposed untouchability and caste discrimination. Believed in a united, casteless Hindu society.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🌐</div>
+              <h5>Hindu Rashtra</h5>
+              <p>Envisioned Bharat as a Hindu Rashtra — a nation where Hindu culture, values, and heritage form the civilizational core.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🕊️</div>
+              <h5>Absolute Independence</h5>
+              <p>Was the first to call for <em>Purna Swaraj</em> (complete independence) from British rule as early as 1900.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Facts Timeline -->
+        <div class="savarkar-timeline">
+          <h4 class="pillars-heading">📅 Life & Legacy — Key Milestones</h4>
+          <div class="timeline-list">
+            <div class="tl-item"><span class="tl-year">1883</span><span class="tl-event">Born in Bhagur, Nashik, Maharashtra</span></div>
+            <div class="tl-item"><span class="tl-year">1900</span><span class="tl-event">Founded secret society <em>Mitra Mela</em> (later Abhinav Bharat Society)</span></div>
+            <div class="tl-item"><span class="tl-year">1909</span><span class="tl-event">Arrested in London for revolutionary activities against British rule</span></div>
+            <div class="tl-item"><span class="tl-year">1911</span><span class="tl-event">Sentenced to 50 years — sent to Cellular Jail, Andaman (Kala Pani)</span></div>
+            <div class="tl-item"><span class="tl-year">1923</span><span class="tl-event">Wrote <em>Hindutva: Who is a Hindu?</em> — defining text of Hindu nationalism</span></div>
+            <div class="tl-item"><span class="tl-year">1937</span><span class="tl-event">Elected President of Hindu Mahasabha</span></div>
+            <div class="tl-item"><span class="tl-year">1966</span><span class="tl-event">Attained Mahasamadhi on 26 February, Mumbai</span></div>
+            <div class="tl-item"><span class="tl-year">2024</span><span class="tl-event">Bharat Ratna conferred posthumously — nation honours its greatest patriot</span></div>
+          </div>
         </div>
       </div>
+    </div>
+
+    <!-- VIDEO SECTION -->
+    <div class="savarkar-video-section">
+      <h3 class="video-heading">🎬 Know More About Veer Savarkar</h3>
+      <p class="video-sub">Watch this documentary to understand the life, philosophy, and legacy of Swatantryaveer Vinayak Damodar Savarkar</p>
+      <div class="video-frame-wrap">
+        <iframe
+          class="savarkar-video"
+          src="https://www.youtube.com/embed/fzHm7LBCyeA"
+          title="Veer Savarkar - Life and Legacy"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="video-caption">📺 Swatantryaveer Savarkar — The Revolutionary Hero of India</p>
     </div>
   </div>
 </section>
@@ -235,6 +326,89 @@
           <h3>Viksit Bharat 2047</h3>
           <p>Work toward a fully developed India by 2047 — with world-class infrastructure, healthcare, space capabilities, and global cultural leadership.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMMUNITY — WhatsApp & Telegram ========== -->
+<section class="section community-section" id="community">
+  <div class="community-bg"></div>
+  <div class="container">
+    <div class="section-eyebrow" style="color:#FFD700">॥ हमारे समुदाय से जुड़ें ॥</div>
+    <h2 class="section-title" style="color:#fff">Join Our Community</h2>
+    <p class="section-subtitle" style="color:#FFD700aa">Connect with thousands of like-minded patriots on WhatsApp & Telegram</p>
+
+    <div class="community-cards">
+      <!-- WhatsApp Card -->
+      <div class="comm-card whatsapp-card">
+        <div class="comm-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <circle cx="16" cy="16" r="16" fill="#25D366"/>
+            <path d="M22.5 9.5A8.96 8.96 0 0016 7C11.03 7 7 11.03 7 16c0 1.59.42 3.14 1.21 4.5L7 25l4.62-1.21A8.96 8.96 0 0016 25c4.97 0 9-4.03 9-9 0-2.41-.94-4.67-2.5-6.5zm-6.5 13.83c-1.35 0-2.67-.36-3.82-1.03l-.27-.16-2.74.72.73-2.67-.18-.28A7.42 7.42 0 018.58 16c0-4.1 3.34-7.44 7.44-7.44 1.99 0 3.86.78 5.27 2.18A7.41 7.41 0 0123.5 16c-.01 4.1-3.35 7.33-7.5 7.33zm4.08-5.56c-.22-.11-1.32-.65-1.52-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.17-.48.06-.22-.11-.94-.35-1.79-1.11-.66-.59-1.1-1.32-1.23-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.08-.15.04-.28-.02-.39-.06-.11-.5-1.21-.69-1.66-.18-.43-.37-.37-.5-.38h-.43c-.15 0-.39.06-.59.28-.2.22-.78.76-.78 1.85s.8 2.15.91 2.3c.11.15 1.57 2.4 3.8 3.36.53.23.94.37 1.27.47.53.17 1.02.14 1.4.09.43-.06 1.32-.54 1.5-1.06.19-.52.19-.96.13-1.06-.05-.1-.2-.16-.42-.27z" fill="white"/>
+          </svg>
+        </div>
+        <h3 class="comm-title">WhatsApp Group</h3>
+        <p class="comm-desc">Join our official WhatsApp group to get daily updates, rally announcements, and connect with party members.</p>
+        <div class="comm-stats">
+          <span id="wa-members">Loading...</span>
+        </div>
+        <button class="comm-btn wa-btn" id="waJoinBtn" onclick="joinCommunity('whatsapp')">
+          <span class="btn-spinner" id="wa-spinner" style="display:none"></span>
+          Join WhatsApp Group →
+        </button>
+        <div class="comm-status" id="wa-status"></div>
+      </div>
+
+      <!-- Telegram Card -->
+      <div class="comm-card telegram-card">
+        <div class="comm-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <circle cx="16" cy="16" r="16" fill="#229ED9"/>
+            <path d="M23.5 8.5L5.5 15.6c-1.2.5-1.2 1.2-.2 1.5l4.5 1.4 10.4-6.6c.5-.3.9-.1.6.2l-8.4 7.6v0l-.3 4.7c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7l2.7-12.8c.3-1.2-.5-1.7-1.2-1.6z" fill="white"/>
+          </svg>
+        </div>
+        <h3 class="comm-title">Telegram Channel</h3>
+        <p class="comm-desc">Subscribe to our Telegram channel for news, ideology discussions, party policies, and member-only content.</p>
+        <div class="comm-stats">
+          <span id="tg-members">Loading...</span>
+        </div>
+        <button class="comm-btn tg-btn" id="tgJoinBtn" onclick="joinCommunity('telegram')">
+          <span class="btn-spinner" id="tg-spinner" style="display:none"></span>
+          Join Telegram Channel →
+        </button>
+        <div class="comm-status" id="tg-status"></div>
+      </div>
+
+      <!-- YouTube Card -->
+      <div class="comm-card youtube-card">
+        <div class="comm-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <circle cx="16" cy="16" r="16" fill="#FF0000"/>
+            <path d="M24.5 12.5s-.2-1.5-.9-2.1c-.8-.9-1.8-.9-2.2-.9C18.8 9.3 16 9.3 16 9.3s-2.8 0-5.4.2c-.4.1-1.4.1-2.2.9-.7.6-.9 2.1-.9 2.1S7.3 14.2 7.3 16v1.4c0 1.8.2 3.5.2 3.5s.2 1.5.9 2.1c.8.9 2 .8 2.5.9 1.8.2 7.1.2 7.1.2s2.8 0 5.4-.2c.4-.1 1.4-.1 2.2-.9.7-.6.9-2.1.9-2.1s.2-1.7.2-3.5V16c0-1.8-.2-3.5-.2-3.5zm-13.1 7.1v-6.2l6 3.1-6 3.1z" fill="white"/>
+          </svg>
+        </div>
+        <h3 class="comm-title">YouTube Channel</h3>
+        <p class="comm-desc">Watch speeches, rallies, documentaries about Hindu history, and Savarkar's philosophy on our YouTube channel.</p>
+        <div class="comm-stats">
+          <span id="yt-members">Loading...</span>
+        </div>
+        <button class="comm-btn yt-btn" id="ytJoinBtn" onclick="joinCommunity('youtube')">
+          <span class="btn-spinner" id="yt-spinner" style="display:none"></span>
+          Subscribe on YouTube →
+        </button>
+        <div class="comm-status" id="yt-status"></div>
+      </div>
+    </div>
+
+    <!-- API Status Dashboard -->
+    <div class="api-dashboard">
+      <h4 class="api-dash-title">🔗 Live Community API Status</h4>
+      <div class="api-status-grid" id="apiStatusGrid">
+        <div class="api-stat-item" id="api-health"><span class="api-dot loading"></span> Health Check</div>
+        <div class="api-stat-item" id="api-members"><span class="api-dot loading"></span> Members API</div>
+        <div class="api-stat-item" id="api-wa"><span class="api-dot loading"></span> WhatsApp API</div>
+        <div class="api-stat-item" id="api-tg"><span class="api-dot loading"></span> Telegram API</div>
       </div>
     </div>
   </div>
@@ -371,7 +545,7 @@
       <div class="contact-card">
         <div class="contact-icon">📧</div>
         <h4>Email</h4>
-        <p>contact@hinduswarajparty.org<br/>president@hinduswarajparty.org</p>
+        <p>contact@hinduswarajparty.org<br/>info@hinduswarajparty.org</p>
       </div>
       <div class="contact-card">
         <div class="contact-icon">📞</div>
@@ -405,7 +579,7 @@
   <div class="footer-divider"></div>
   <div class="footer-bottom">
     <p>© 2024 Hindu Swaraj Party. All Rights Reserved.</p>
-    <p>Registered under Election Commission of India &nbsp;|&nbsp; President: Prasad Harishchandra Bhor</p>
+    <p>Registered under Election Commission of India &nbsp;|&nbsp; Inspired by the ideology of Veer Savarkar</p>
     <p class="footer-jai">🇮🇳 जय हिंद &nbsp;|&nbsp; जय भारत &nbsp;|&nbsp; वन्दे मातरम् &nbsp;|&nbsp; हर हर महादेव 🕉</p>
   </div>
 </footer>
